@@ -1,19 +1,29 @@
+import java.util.Scanner;
 
-
-/*import java.util.Scanner;
-
-         public class Main {
-    static Scanner scanner = new Scanner(System.in);
-
+public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print(
+                "Enter the first and the Second number - ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        System.out.print(
+                "Choose and Enter the type of operation you want to perform (+, -, *, /, %) - ");
+        char op = sc.next().charAt(0);
+        solve(a, b, op);
+
+        Scanner scanner = new Scanner(System.in);
+
         int num1 = getInt();
         int num2 = getInt();
         char operation = getOperation();
-        int result = calc(num1,num2,operation);
-        System.out.println("Результат операции: "+result);
+        int result = calc(num1, num2, operation);
+        System.out.println("Результат операции: " + result);
     }
 
     public static int getInt(){
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число:");
         int num;
         if(scanner.hasNextInt()){
@@ -27,6 +37,7 @@
     }
 
     public static char getOperation(){
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Введите операцию:");
         char operation;
         if(scanner.hasNext()){
@@ -60,53 +71,25 @@
         }
         return result;
     }
-}*/
-    import java.util.Scanner;
 
-    public class Main {
-    public static void main(String[] args)
-    {
-        Scanner sc = new Scanner(System.in);
 
-        // taking input from the user using the Scanner
-        // class
-        System.out.print(
-                "Enter the first and the Second number - ");
-        int a = sc.nextInt();
-        int b = sc.nextInt();
 
-        // selecting the operand for the calculations
-        System.out.print(
-                "Choose and Enter the type of operation you want to perform (+, -, *, /, %) - ");
-        char op = sc.next().charAt(0);
-        solve(a, b, op);
-    }
-    public static int solve(int a, int b, char op)
-    {
-        int ans = 0;
-        // addition
-        if (op == '+') {
-            ans = a + b;
-            // subtraction
-        }
-        else if (op == '-') {
-            ans = a - b;
-            // multiplication
-        }
-        else if (op == '*') {
-            ans = a * b;
-            // modulo
-        }
-        else if (op == '%') {
-            ans = a % b;
-            // division
-        }
-        else if (op == '/') {
-            ans = a / b;
-        }
+        public static int solve(int a, int b, char op) {
+            int ans = 0;
+            // addition
+            if (op == '+') {
+                ans = a + b;
+            } else if (op == '-') {
+                ans = a - b;
+            } else if (op == '*') {
+                ans = a * b;
+            } else if (op == '%') {
+                ans = a % b;
+            } else if (op == '/') {
+                ans = a / b;
+            }
 
-        // printing the final result
-        System.out.println("Your answer is - " + ans);
-        return ans;
-    }
+            System.out.println("Your answer is - " + ans);
+            return ans;
+        }
 }
